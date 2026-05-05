@@ -1,0 +1,93 @@
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #fff4e0;
+}
+
+.color-white {
+    color: white;
+}
+
+.box-item {
+    padding: 20px;
+}
+
+/* The flip-box container */
+.flip-box {
+    position: relative;
+    width: 100%;
+    height: 475px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* The inner wrapper that actually flips */
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(.4, .2, .2, 1);
+}
+
+/* Trigger the flip on hover */
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+/* Shared styles for front and back */
+.flip-box-front,
+.flip-box-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Front starts facing forward */
+.flip-box-front {
+    background-color: aquamarine;
+}
+
+/* Back starts pre-rotated so it shows after the flip */
+.flip-box-back {
+    background-color: aqua;
+    transform: rotateY(180deg);
+}
+
+.flip-box-header {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.flip-box p {
+    font-size: 20px;
+    line-height: 1.5rem;
+}
+
+.flip-box-button {
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 2px;
+    color: #333;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 15px 20px;
+    text-transform: uppercase;
+}
+
+.flip-box-button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
